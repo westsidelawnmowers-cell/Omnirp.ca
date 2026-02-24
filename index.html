@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom 3D Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="top-nav">
+      <div class="brand">R. Holloway</div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#blog">Blog</a>
+        <a href="#quote">Get Quote</a>
+      </nav>
+    </header>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="track">
+        <span>• Custom 3D Solutions</span><span>• Custom 3D Solutions</span><span>• Custom 3D Solutions</span><span>• Custom 3D Solutions</span><span>• Custom 3D Solutions</span><span>• Custom 3D Solutions</span>
+      </div>
+    </div>
+
+    <main id="home">
+      <section class="hero" id="about">
+        <div class="overlay"></div>
+        <div class="hero-content">
+          <h1>Bringing Your Ideas<br />to Life</h1>
+          <p>Bringing your ideas to life with advanced 3D printing.</p>
+          <a class="btn" href="#portfolio">Discover Our Services</a>
+        </div>
+      </section>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="track">
+          <span>• Custom 3D Solutions</span><span>• Custom 3D Solutions</span><span>• Custom 3D Solutions</span><span>• Custom 3D Solutions</span><span>• Custom 3D Solutions</span><span>• Custom 3D Solutions</span>
+        </div>
+      </div>
+
+      <section class="expertise section-block">
+        <h2>Our Expertise</h2>
+        <div class="expertise-grid">
+          <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=600&q=80" alt="Team working on 3D printer" />
+          <div>
+            <p>
+              At Omnirp Propel Pathways, we are experts in utilizing cutting-edge 3D printing technologies to transform concepts into tangible products. Our proficiency lies in prototyping, custom manufacturing, and creative industrial design solutions.
+            </p>
+            <a class="btn" href="#quote">Learn About Our Process</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio" class="offerings section-block">
+        <h2>What We Offer</h2>
+        <p class="kicker">Our Work</p>
+
+        <article>
+          <h3>3D Printed Parts</h3>
+          <p class="label">Functional and Iterative</p>
+          <p class="description">Explore our diverse range of 3D-printed parts created with precision and functionality in mind. Each piece is a testament to our commitment to excellence and innovation in 3D printing.</p>
+        </article>
+
+        <article>
+          <h3>Prototyping Projects</h3>
+          <p class="label">Iterative Design</p>
+          <p class="description">Discover our portfolio of intricate prototyping projects that demonstrate the fusion of creativity and technology. Each project showcases our attention to detail and passion for design.</p>
+        </article>
+
+        <article>
+          <h3>Custom Manufacturing</h3>
+          <p class="label">Bespoke Creations</p>
+          <p class="description">Our bespoke products are a blend of artistry and functionality, tailored to meet the unique needs of our clients. Explore our collection to witness true craftsmanship.</p>
+        </article>
+      </section>
+
+      <section id="quote" class="section-block quote-section">
+        <h2>Get an Instant Quote</h2>
+        <p class="quote-intro">Choose your project specs and get an instant estimate. To connect to your CRM or automation flow, set your webhook URL in <code>script.js</code>.</p>
+        <form id="quote-form" class="quote-form">
+          <label>
+            Service Type
+            <select name="service" required>
+              <option value="parts">3D Printed Parts</option>
+              <option value="prototype">Prototype Build</option>
+              <option value="manufacturing">Custom Manufacturing</option>
+            </select>
+          </label>
+          <label>
+            Material
+            <select name="material" required>
+              <option value="pla">PLA</option>
+              <option value="petg">PETG</option>
+              <option value="resin">Resin</option>
+            </select>
+          </label>
+          <label>
+            Quantity
+            <input type="number" name="quantity" min="1" value="1" required />
+          </label>
+          <label>
+            Turnaround
+            <select name="turnaround" required>
+              <option value="standard">Standard (7-10 days)</option>
+              <option value="rush">Rush (2-4 days)</option>
+            </select>
+          </label>
+          <button type="submit">Calculate Instant Quote</button>
+        </form>
+        <div id="quote-result" class="quote-result" aria-live="polite"></div>
+      </section>
+
+      <section id="blog" class="section-block blog-section">
+        <h2>From the Blog</h2>
+        <div class="blog-grid">
+          <article>
+            <h3>How to Prepare CAD Files for Better Prints</h3>
+            <p>5 practical checks to improve quality, reduce print failures, and keep tolerances tight.</p>
+            <a href="#">Read Article</a>
+          </article>
+          <article>
+            <h3>Material Guide: PLA vs PETG vs Resin</h3>
+            <p>A quick decision framework for choosing the right material based on strength, finish, and cost.</p>
+            <a href="#">Read Article</a>
+          </article>
+          <article>
+            <h3>From Prototype to Production</h3>
+            <p>Learn the steps we use to turn one-off concepts into scalable manufacturing-ready parts.</p>
+            <a href="#">Read Article</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section-block contact-section">
+        <h2>Contact Us</h2>
+        <p>Email us at <a href="mailto:hello@omnirp.ca">hello@omnirp.ca</a> or call (555) 010-3000.</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
