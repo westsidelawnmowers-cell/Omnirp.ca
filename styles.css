@@ -1,8 +1,12 @@
 :root {
-  --bg: #030506;
-  --panel: #0d1115;
-  --text: #b0ff72;
-  --line: #5cd02f;
+  --bg: #050505;
+  --panel: #101010;
+  --panel-soft: #171717;
+  --text: #ffffff;
+  --muted: #d6d6d6;
+  --accent: #f15a29;
+  --accent-strong: #ff6b36;
+  --line: #2a2a2a;
 }
 
 * {
@@ -27,9 +31,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.35rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   background: #000;
-  border-bottom: 1px solid #0e1d0b;
+  border-bottom: 1px solid var(--line);
   font-size: 0.68rem;
   text-transform: uppercase;
 }
@@ -43,18 +47,23 @@ body {
 .top-nav a,
 .brand {
   color: var(--text);
-  opacity: 0.88;
+  opacity: 0.92;
   text-decoration: none;
 }
 
+.top-nav a:hover,
+.top-nav a:focus-visible {
+  color: var(--accent);
+}
+
 .ticker {
-  background: var(--line);
-  color: #0b1808;
+  background: var(--accent);
+  color: #fff;
   font-size: 0.58rem;
   white-space: nowrap;
   overflow: hidden;
-  border-top: 1px solid #73f547;
-  border-bottom: 1px solid #73f547;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
 }
 
 .track {
@@ -87,7 +96,7 @@ body {
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.73);
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(10, 10, 10, 0.82));
 }
 
 .hero-content {
@@ -102,28 +111,41 @@ h3 {
   margin: 0;
 }
 
+h2 {
+  color: var(--accent);
+}
+
 .hero h1 {
+  color: #fff;
   font-size: clamp(2.2rem, 4.8vw, 4.8rem);
   line-height: 0.95;
 }
 
 .hero p {
   margin: 1.2rem 0;
+  color: var(--muted);
   font-size: 0.88rem;
 }
 
 .button-link,
 button {
   display: inline-block;
-  border: 1px solid var(--line);
-  color: #112108;
-  background: var(--text);
+  border: 1px solid var(--accent-strong);
+  color: #fff;
+  background: var(--accent);
   padding: 0.48rem 1rem;
   border-radius: 100vmax;
   font-family: inherit;
   font-size: 0.68rem;
   text-decoration: none;
   cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.button-link:hover,
+button:hover {
+  background: var(--accent-strong);
+  transform: translateY(-1px);
 }
 
 .section-block {
@@ -143,13 +165,15 @@ button {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  filter: saturate(0.5);
+  border: 1px solid var(--line);
+  filter: saturate(0.85);
 }
 
 .expertise p,
 .simple-section p,
 .quote-intro {
   max-width: 600px;
+  color: var(--muted);
   font-size: 0.82rem;
   line-height: 1.55;
   margin-bottom: 1rem;
@@ -162,11 +186,12 @@ button {
 
 .kicker {
   margin: 0.35rem 0 1rem;
+  color: var(--muted);
   font-size: 0.65rem;
 }
 
 .offerings article {
-  border-top: 1px solid rgba(146, 255, 89, 0.52);
+  border-top: 1px solid #2e2e2e;
   padding: 1rem 0;
   display: grid;
   grid-template-columns: 1fr auto;
@@ -174,24 +199,33 @@ button {
 }
 
 .offerings h3 {
+  color: #fff;
   font-size: 1.7rem;
 }
 
 .label {
+  color: var(--accent);
   font-size: 0.6rem;
   margin-top: 0.2rem;
 }
 
 .description {
   max-width: 410px;
+  color: var(--muted);
   font-size: 0.65rem;
   line-height: 1.5;
   margin: 0;
   align-self: center;
 }
 
+.simple-section {
+  background: var(--panel-soft);
+  border-top: 1px solid var(--line);
+}
+
 .quote-section {
-  border-top: 1px solid rgba(146, 255, 89, 0.4);
+  border-top: 1px solid var(--line);
+  background: #0b0b0b;
 }
 
 .quote-form {
@@ -205,15 +239,22 @@ button {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
+  color: #fff;
   font-size: 0.7rem;
 }
 
 .quote-form input,
 .quote-form select {
-  background: #050905;
-  border: 1px solid rgba(146, 255, 89, 0.5);
-  color: var(--text);
+  background: #131313;
+  border: 1px solid #3b3b3b;
+  color: #fff;
   padding: 0.5rem;
+}
+
+.quote-form input:focus,
+.quote-form select:focus {
+  outline: 1px solid var(--accent);
+  border-color: var(--accent);
 }
 
 .quote-form button {
@@ -224,6 +265,7 @@ button {
 .quote-result {
   margin-top: 1rem;
   min-height: 1.2rem;
+  color: #fff;
   font-size: 0.8rem;
 }
 
