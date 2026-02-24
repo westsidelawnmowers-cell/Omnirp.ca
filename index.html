@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom 3D Solutions</title>
+    <style>
+      :root {
+        --bg: #050606;
+        --surface: #0f1113;
+        --line: #76f452;
+        --text: #d7ffd0;
+        --muted: #8fbd82;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", "Segoe UI", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      .ticker {
+        background: var(--line);
+        color: #111;
+        border-top: 2px solid #0d0d0d;
+        border-bottom: 2px solid #0d0d0d;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      .ticker span {
+        display: inline-block;
+        padding: 0.45rem 0;
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        min-width: 100%;
+        animation: move 20s linear infinite;
+      }
+
+      @keyframes move {
+        from {
+          transform: translateX(0);
+        }
+
+        to {
+          transform: translateX(-100%);
+        }
+      }
+
+      header {
+        background: #080a0b;
+        border-bottom: 1px solid #1a1e22;
+      }
+
+      .nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0.7rem 1.2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .brand {
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
+
+      nav ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none;
+        gap: 1.2rem;
+      }
+
+      nav a {
+        color: #c6f9bc;
+        font-size: 0.72rem;
+        text-decoration: none;
+      }
+
+      .hero {
+        min-height: 62vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.64), rgba(0, 0, 0, 0.64)),
+          url("https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=2000&q=80") center / cover;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 3rem 1rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.2rem, 5vw, 4.7rem);
+        line-height: 0.95;
+        margin: 0;
+        color: var(--line);
+        font-weight: 500;
+      }
+
+      .hero p {
+        margin: 1.1rem auto 1.6rem;
+        font-size: 0.9rem;
+        color: #b2e2aa;
+        max-width: 450px;
+      }
+
+      .btn {
+        display: inline-block;
+        border: 1px solid var(--line);
+        color: #0c1408;
+        background: var(--line);
+        border-radius: 999px;
+        padding: 0.5rem 1.1rem;
+        font-size: 0.75rem;
+        text-decoration: none;
+      }
+
+      section {
+        padding: 2.4rem 1.2rem 3.6rem;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      h2 {
+        color: var(--line);
+        font-size: clamp(1.8rem, 3vw, 3rem);
+        margin: 0 0 1.2rem;
+        font-weight: 500;
+      }
+
+      .expertise {
+        background: var(--surface);
+        border-top: 2px solid #0b0d0f;
+      }
+
+      .expert-grid {
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .expert-grid img {
+        width: 100%;
+        border: 1px solid #1f2328;
+      }
+
+      .expert-text {
+        max-width: 420px;
+        justify-self: end;
+        color: #b7e2ad;
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+
+      .offer-list {
+        margin-top: 1.4rem;
+      }
+
+      .offer-item {
+        border-top: 1px solid #265022;
+        padding: 1.2rem 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .offer-item h3 {
+        margin: 0;
+        color: #c0ffb2;
+        font-weight: 500;
+      }
+
+      .offer-item p {
+        margin: 0;
+        color: #98c68f;
+        font-size: 0.85rem;
+        max-width: 460px;
+        justify-self: end;
+      }
+
+      @media (max-width: 900px) {
+        .expert-grid,
+        .offer-item {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+
+        .expert-text,
+        .offer-item p {
+          justify-self: start;
+        }
+
+        nav ul {
+          gap: 0.8rem;
+          flex-wrap: wrap;
+          justify-content: flex-end;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav">
+        <div class="brand">F. Mallory</div>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Shop Online</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="ticker"><span>•&nbsp;Custom 3D Solutions&nbsp;&nbsp;•&nbsp;Custom 3D Solutions&nbsp;&nbsp;•&nbsp;Custom 3D Solutions&nbsp;&nbsp;•&nbsp;Custom 3D Solutions&nbsp;&nbsp;•&nbsp;Custom 3D Solutions&nbsp;&nbsp;•&nbsp;Custom 3D Solutions&nbsp;&nbsp;•&nbsp;Custom 3D Solutions&nbsp;&nbsp;•&nbsp;Custom 3D Solutions&nbsp;&nbsp;•&nbsp;Custom 3D Solutions&nbsp;&nbsp;•&nbsp;Custom 3D Solutions&nbsp;&nbsp;</span></div>
+
+    <section class="hero">
+      <div>
+        <h1>Bringing Your Ideas<br />to Life</h1>
+        <p>Bringing your ideas to life with advanced 3D printing, prototyping, and precision fabrication.</p>
+        <a class="btn" href="#">Discover Our Services</a>
+      </div>
+    </section>
+
+    <div class="ticker"><span>•&nbsp;Custom 3D Solutions&nbsp;&nbsp;•&nbsp;Custom 3D Solutions&nbsp;&nbsp;•&nbsp;Custom 3D Solutions&nbsp;&nbsp;•&nbsp;Custom 3D Solutions&nbsp;&nbsp;•&nbsp;Custom 3D Solutions&nbsp;&nbsp;•&nbsp;Custom 3D Solutions&nbsp;&nbsp;•&nbsp;Custom 3D Solutions&nbsp;&nbsp;•&nbsp;Custom 3D Solutions&nbsp;&nbsp;</span></div>
+
+    <section class="expertise">
+      <div class="container">
+        <h2>Our Expertise</h2>
+        <div class="expert-grid">
+          <img src="https://images.unsplash.com/photo-1624638760851-8ede1666d0fe?auto=format&fit=crop&w=600&q=80" alt="Two people examining a 3D printer" />
+          <div class="expert-text">
+            At Omni Print Prototypes, we are experts in utilizing cutting-edge 3D printing technologies to transform concepts into tangible products. Our proficiency spans prototyping, custom manufacturing, and precise design execution.
+            <p><a class="btn" href="#">Learn About Our Process</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>What We Offer</h2>
+        <div class="offer-list">
+          <div class="offer-item">
+            <h3>3D Printed Parts</h3>
+            <p>Engineered for durability and precision, each piece is crafted to meet demanding standards.</p>
+          </div>
+          <div class="offer-item">
+            <h3>Prototyping Projects</h3>
+            <p>Transforming ideas into reliable mockups for faster product iteration and confident approvals.</p>
+          </div>
+          <div class="offer-item" style="border-bottom:1px solid #265022;">
+            <h3>Custom Manufacturing</h3>
+            <p>Scalable manufacturing solutions tailored to your business needs with rapid turnaround.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
