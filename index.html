@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Omni Rapid Prototyping | 3D Printing Services</title>
+    <meta
+      name="description"
+      content="Omni Rapid Prototyping delivers industrial-grade 3D printing, CNC machining, and finishing for fast-turn product teams."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="logo" href="#">Omni <span>Rapid Prototyping</span></a>
+        <nav>
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#materials">Materials</a>
+          <a href="#quote">Get Quote</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <p class="eyebrow">Trusted by hardware teams and startups</p>
+            <h1>Precision 3D Printing for Production-Ready Parts</h1>
+            <p class="lead">
+              Upload your CAD and receive a manufacturability review within hours.
+              We deliver SLA, SLS, MJF, and FDM parts in as little as 24 hours.
+            </p>
+            <div class="cta-row">
+              <a class="btn primary" href="#quote">Start a New Quote</a>
+              <a class="btn ghost" href="#services">Explore Capabilities</a>
+            </div>
+            <div class="trust-row">
+              <span>ISO-inspired QA workflow</span>
+              <span>±0.1 mm tolerance on most builds</span>
+              <span>Rush delivery nationwide</span>
+            </div>
+          </div>
+          <div class="hero-card" id="quote">
+            <h2>Instant Project Brief</h2>
+            <p>Tell us what you are building and we will reply with lead time + pricing.</p>
+            <form class="quote-form">
+              <label>
+                Full Name
+                <input type="text" placeholder="Jane Smith" required />
+              </label>
+              <label>
+                Work Email
+                <input type="email" placeholder="jane@company.com" required />
+              </label>
+              <label>
+                Process
+                <select>
+                  <option>SLA / Resin</option>
+                  <option>SLS / Nylon</option>
+                  <option>MJF</option>
+                  <option>FDM</option>
+                  <option>Not sure</option>
+                </select>
+              </label>
+              <label>
+                Project Notes
+                <textarea rows="3" placeholder="Part quantity, dimensions, use case..."></textarea>
+              </label>
+              <button class="btn primary" type="submit">Request Quote</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="services">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Capabilities</p>
+            <h2>From Concept to End-Use Parts</h2>
+          </div>
+          <div class="card-grid">
+            <article class="info-card">
+              <h3>Rapid Prototyping</h3>
+              <p>
+                Validate fit, form, and function in days with engineering-grade
+                polymers and transparent resins.
+              </p>
+            </article>
+            <article class="info-card">
+              <h3>Low-Volume Production</h3>
+              <p>
+                Bridge injection-mold delays with repeatable serial production and
+                strict QA checkpoints.
+              </p>
+            </article>
+            <article class="info-card">
+              <h3>Post-Processing</h3>
+              <p>
+                Surface finishing, dyeing, media blasting, and threaded inserts for
+                presentation-ready assemblies.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section muted" id="process">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">How it works</p>
+            <h2>A Simple 4-Step Workflow</h2>
+          </div>
+          <ol class="timeline">
+            <li><strong>1. Upload CAD:</strong> STEP, STL, and OBJ files supported.</li>
+            <li><strong>2. Engineering Review:</strong> Orientation and support strategy check.</li>
+            <li><strong>3. Build & Finish:</strong> Production begins after your approval.</li>
+            <li><strong>4. Ship Fast:</strong> Tracked delivery direct to your team.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section" id="materials">
+        <div class="container materials">
+          <div>
+            <p class="eyebrow">Material library</p>
+            <h2>Choose the Right Material for Your Application</h2>
+            <p>
+              We stock over 40 materials including nylon PA12, flexible TPU,
+              high-temp resin, and carbon-fiber reinforced filaments.
+            </p>
+            <ul>
+              <li>Functional prototypes with impact resistance</li>
+              <li>Heat-resistant parts for under-hood testing</li>
+              <li>Cosmetic finishes for investor demos</li>
+            </ul>
+          </div>
+          <aside class="material-list">
+            <h3>Popular Picks</h3>
+            <ul>
+              <li>Nylon PA12 (SLS)</li>
+              <li>Rigid 10K Resin (SLA)</li>
+              <li>ABS-M30 (FDM)</li>
+              <li>TPU 90A (MJF)</li>
+              <li>Carbon Fiber Nylon</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-wrap">
+        <div>
+          <a class="logo" href="#">Omni <span>Rapid Prototyping</span></a>
+          <p>High-speed additive manufacturing for teams that ship fast.</p>
+        </div>
+        <p>© <span id="year"></span> Omni Rapid Prototyping. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
