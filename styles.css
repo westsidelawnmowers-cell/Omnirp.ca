@@ -1,0 +1,101 @@
+:root {
+  --omni-orange: #e4583d;
+  --omni-black: #101010;
+  --omni-white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--omni-black);
+  color: var(--omni-white);
+  min-height: 100vh;
+}
+
+.hero {
+  background: linear-gradient(140deg, #c7432a, var(--omni-orange));
+  padding: 4rem 1.5rem;
+  text-align: center;
+  color: var(--omni-white);
+}
+
+.hero__badge {
+  display: inline-block;
+  border: 2px solid var(--omni-white);
+  padding: 0.4rem 1rem;
+  letter-spacing: 0.3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.hero p {
+  margin: 0.8rem 0 1.5rem;
+  font-size: 1.1rem;
+}
+
+button {
+  border: none;
+  padding: 0.9rem 1.4rem;
+  border-radius: 999px;
+  background: var(--omni-white);
+  color: var(--omni-black);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+.card {
+  background: #1a1a1a;
+  border: 1px solid #303030;
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.swatch {
+  border-radius: 12px;
+  min-height: 120px;
+  display: flex;
+  align-items: end;
+  padding: 0.8rem;
+  font-weight: 600;
+  border: 1px solid #4d4d4d;
+}
+
+.swatch--orange {
+  background: var(--omni-orange);
+  color: var(--omni-white);
+}
+
+.swatch--white {
+  background: var(--omni-white);
+  color: var(--omni-black);
+}
+
+.swatch--black {
+  background: var(--omni-black);
+  color: var(--omni-white);
+  border-color: #666;
+}
