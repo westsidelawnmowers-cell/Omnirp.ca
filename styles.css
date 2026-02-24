@@ -2,12 +2,15 @@
   --bg: #030506;
   --panel: #0d1115;
   --text: #b0ff72;
-  --muted: #7ad84a;
   --line: #5cd02f;
 }
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -18,6 +21,9 @@ body {
 }
 
 .top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,6 +37,7 @@ body {
 .top-nav nav {
   display: flex;
   gap: 0.9rem;
+  flex-wrap: wrap;
 }
 
 .top-nav a,
@@ -105,7 +112,9 @@ h3 {
   font-size: 0.88rem;
 }
 
+.button-link,
 button {
+  display: inline-block;
   border: 1px solid var(--line);
   color: #112108;
   background: var(--text);
@@ -113,6 +122,8 @@ button {
   border-radius: 100vmax;
   font-family: inherit;
   font-size: 0.68rem;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .section-block {
@@ -135,9 +146,11 @@ button {
   filter: saturate(0.5);
 }
 
-.expertise p {
-  max-width: 430px;
-  font-size: 0.72rem;
+.expertise p,
+.simple-section p,
+.quote-intro {
+  max-width: 600px;
+  font-size: 0.82rem;
   line-height: 1.55;
   margin-bottom: 1rem;
 }
@@ -177,6 +190,43 @@ button {
   align-self: center;
 }
 
+.quote-section {
+  border-top: 1px solid rgba(146, 255, 89, 0.4);
+}
+
+.quote-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  gap: 0.85rem;
+  max-width: 760px;
+}
+
+.quote-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+}
+
+.quote-form input,
+.quote-form select {
+  background: #050905;
+  border: 1px solid rgba(146, 255, 89, 0.5);
+  color: var(--text);
+  padding: 0.5rem;
+}
+
+.quote-form button {
+  grid-column: 1 / -1;
+  justify-self: start;
+}
+
+.quote-result {
+  margin-top: 1rem;
+  min-height: 1.2rem;
+  font-size: 0.8rem;
+}
+
 @media (max-width: 840px) {
   .top-nav {
     flex-direction: column;
@@ -184,7 +234,8 @@ button {
   }
 
   .expertise-grid,
-  .offerings article {
+  .offerings article,
+  .quote-form {
     grid-template-columns: 1fr;
   }
 

@@ -16,11 +16,12 @@
     <header class="top-nav">
       <div class="brand">R. Holloway</div>
       <nav>
-        <a href="#">Home</a>
-        <a href="#">About Us</a>
-        <a href="#">Contact Us</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Book Online</a>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#blog">Blog</a>
+        <a href="#quote" id="nav-quote">Get Quote</a>
       </nav>
     </header>
 
@@ -30,13 +31,13 @@
       </div>
     </div>
 
-    <main>
+    <main id="home">
       <section class="hero">
         <div class="overlay"></div>
         <div class="hero-content">
           <h1>Bringing Your Ideas<br />to Life</h1>
           <p>Bringing your ideas to life with advanced 3D printing.</p>
-          <button>Discover Our Services</button>
+          <a class="button-link" href="#services">Discover Our Services</a>
         </div>
       </section>
 
@@ -46,7 +47,7 @@
         </div>
       </div>
 
-      <section class="expertise section-block">
+      <section id="about" class="expertise section-block">
         <h2>Our Expertise</h2>
         <div class="expertise-grid">
           <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=600&q=80" alt="Team working on 3D printer" />
@@ -54,12 +55,12 @@
             <p>
               At Omnirp Propel Pathways, we are experts in utilizing cutting-edge 3D printing technologies to transform concepts into tangible products. Our proficiency lies in prototyping, custom manufacturing, and creative industrial design solutions.
             </p>
-            <button>Learn About Our Process</button>
+            <a class="button-link" href="#portfolio">Learn About Our Process</a>
           </div>
         </div>
       </section>
 
-      <section class="offerings section-block">
+      <section id="services" class="offerings section-block">
         <h2>What We Offer</h2>
         <p class="kicker">Our Work</p>
 
@@ -81,6 +82,53 @@
           <p class="description">Our bespoke products are a blend of artistry and functionality, tailored to meet the unique needs of our clients. Explore our collection to witness true craftsmanship.</p>
         </article>
       </section>
+
+      <section id="portfolio" class="section-block simple-section">
+        <h2>Portfolio</h2>
+        <p>Featured project snapshots and client builds are available on request while we finalize the live gallery.</p>
+      </section>
+
+      <section id="blog" class="section-block simple-section">
+        <h2>Blog</h2>
+        <p>Read updates about materials, prototyping workflows, and post-processing best practices from our team.</p>
+      </section>
+
+      <section id="quote" class="section-block quote-section">
+        <h2>Get Instant Quote</h2>
+        <p class="quote-intro">Use the quick estimator below. This form is connected to an integration endpoint for instant quoting responses.</p>
+        <form id="quote-form" class="quote-form">
+          <label>
+            Material
+            <select name="material" required>
+              <option value="pla">PLA</option>
+              <option value="abs">ABS</option>
+              <option value="resin">Resin</option>
+              <option value="nylon">Nylon</option>
+            </select>
+          </label>
+          <label>
+            Quantity
+            <input type="number" name="quantity" min="1" value="1" required />
+          </label>
+          <label>
+            Est. Print Hours
+            <input type="number" name="hours" min="1" value="2" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" placeholder="you@company.com" required />
+          </label>
+          <button type="submit">Get Instant Quote</button>
+        </form>
+        <p id="quote-result" class="quote-result" aria-live="polite"></p>
+      </section>
+
+      <section id="contact" class="section-block simple-section">
+        <h2>Contact Us</h2>
+        <p>Email us at hello@omnirp.ca for technical consultation, production timelines, and custom manufacturing support.</p>
+      </section>
     </main>
+
+    <script src="quote.js"></script>
   </body>
 </html>
