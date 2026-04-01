@@ -94,9 +94,38 @@
       </section>
 
       <section id="quote" class="section-block quote-section">
-        <h2>Get Instant Quote</h2>
-        <p class="quote-intro">Use the quick estimator below. This form is connected to an integration endpoint for instant quoting responses.</p>
+        <h2>Request a Quote</h2>
+        <p class="quote-intro">Complete the form below and we'll email you directly after your quote request is submitted.</p>
         <form id="quote-form" class="quote-form">
+          <input type="hidden" name="_subject" value="New OMNIRP quote request" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+
+          <label>
+            Full Name
+            <input type="text" name="name" autocomplete="name" required />
+          </label>
+          <label>
+            Company
+            <input type="text" name="company" autocomplete="organization" />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" autocomplete="email" placeholder="you@company.com" required />
+          </label>
+          <label>
+            Phone
+            <input type="tel" name="phone" autocomplete="tel" placeholder="(123) 456-7890" required />
+          </label>
+          <label>
+            Service Needed
+            <select name="service" required>
+              <option value="3d-printing">3D Printing</option>
+              <option value="cnc-machining">CNC Machining</option>
+              <option value="post-processing">Post Processing</option>
+              <option value="custom-fabrication">Custom Fabrication</option>
+            </select>
+          </label>
           <label>
             Material
             <select name="material" required>
@@ -104,6 +133,8 @@
               <option value="abs">ABS</option>
               <option value="resin">Resin</option>
               <option value="nylon">Nylon</option>
+              <option value="aluminum">Aluminum</option>
+              <option value="steel">Steel</option>
             </select>
           </label>
           <label>
@@ -111,14 +142,18 @@
             <input type="number" name="quantity" min="1" value="1" required />
           </label>
           <label>
-            Est. Print Hours
-            <input type="number" name="hours" min="1" value="2" required />
+            Needed By
+            <input type="date" name="deadline" />
           </label>
-          <label>
-            Email
-            <input type="email" name="email" placeholder="you@company.com" required />
+          <label class="full-width">
+            Part/File Link
+            <input type="url" name="file_link" placeholder="https://drive.google.com/..." />
           </label>
-          <button type="submit">Get Instant Quote</button>
+          <label class="full-width">
+            Project Details
+            <textarea name="details" rows="4" placeholder="Dimensions, tolerances, finish, and any special notes." required></textarea>
+          </label>
+          <button type="submit">Send Quote Request</button>
         </form>
         <p id="quote-result" class="quote-result" aria-live="polite"></p>
       </section>
