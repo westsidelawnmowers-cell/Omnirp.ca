@@ -243,16 +243,27 @@ button:hover {
   font-size: 0.7rem;
 }
 
+.quote-form .full-width {
+  grid-column: 1 / -1;
+}
+
 .quote-form input,
-.quote-form select {
+.quote-form select,
+.quote-form textarea {
   background: #131313;
   border: 1px solid #3b3b3b;
   color: #fff;
   padding: 0.5rem;
+  font-family: inherit;
+}
+
+.quote-form textarea {
+  resize: vertical;
 }
 
 .quote-form input:focus,
-.quote-form select:focus {
+.quote-form select:focus,
+.quote-form textarea:focus {
   outline: 1px solid var(--accent);
   border-color: var(--accent);
 }
