@@ -251,6 +251,17 @@ button:hover {
   padding: 0.5rem;
 }
 
+.quote-form input:-webkit-autofill,
+.quote-form input:-webkit-autofill:hover,
+.quote-form input:-webkit-autofill:focus,
+.quote-form input:-webkit-autofill:active {
+  -webkit-text-fill-color: #fff;
+  caret-color: #fff;
+  -webkit-box-shadow: 0 0 0 1000px #131313 inset;
+  box-shadow: 0 0 0 1000px #131313 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 .quote-form input:focus,
 .quote-form select:focus {
   outline: 1px solid var(--accent);
@@ -267,6 +278,15 @@ button:hover {
   min-height: 1.2rem;
   color: #fff;
   font-size: 0.8rem;
+}
+
+.quote-result a {
+  color: var(--accent);
+}
+
+.quote-result code {
+  font-family: inherit;
+  color: #f3c0ad;
 }
 
 @media (max-width: 840px) {
