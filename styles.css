@@ -280,6 +280,15 @@ button:hover {
   font-size: 0.8rem;
 }
 
+.quote-result a {
+  color: var(--accent);
+}
+
+.quote-result code {
+  font-family: inherit;
+  color: #f3c0ad;
+}
+
 @media (max-width: 840px) {
   .top-nav {
     flex-direction: column;

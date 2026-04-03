@@ -1,4 +1,4 @@
-const QUOTE_ENDPOINT = "https://hook.us1.make.com/replace-with-your-live-webhook";
+const QUOTE_NOTIFICATION_EMAIL = "hello@omnirp.ca";
 
 const materialMultipliers = {
   pla: 1,
@@ -10,13 +10,27 @@ const materialMultipliers = {
 const quoteForm = document.getElementById("quote-form");
 const quoteResult = document.getElementById("quote-result");
 
+const buildMailtoLink = (payload, estimate) => {
+  const subject = encodeURIComponent("New Quote Request");
+  const body = encodeURIComponent(
+    [
+      `Customer Email: ${payload.email}`,
+      `Material: ${payload.material.toUpperCase()}`,
+      `Quantity: ${payload.quantity}`,
+      `Estimated Print Hours: ${payload.hours}`,
+      `Fallback Estimate: $${estimate}`
+    ].join("\n")
+  );
+  return `mailto:${QUOTE_NOTIFICATION_EMAIL}?subject=${subject}&body=${body}`;
+};
+
 const estimateFallback = (material, quantity, hours) => {
   const baseRate = 18;
   const multiplier = materialMultipliers[material] || 1;
   return Math.round(baseRate * multiplier * quantity * hours);
 };
 
-quoteForm?.addEventListener("submit", async (event) => {
+quoteForm?.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const formData = new FormData(quoteForm);
@@ -27,31 +41,11 @@ quoteForm?.addEventListener("submit", async (event) => {
     email: String(formData.get("email") || "")
   };
 
-  quoteResult.textContent = "Getting instant quote...";
+  const estimate = estimateFallback(payload.material, payload.quantity, payload.hours);
+  const mailtoLink = buildMailtoLink(payload, estimate);
 
-  try {
-    const response = await fetch(QUOTE_ENDPOINT, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
-    });
-
-    if (!response.ok) {
-      throw new Error("Quote integration unavailable");
-    }
-
-    const data = await response.json();
-    const quoteValue = data.quote ?? data.amount;
-
-    if (!quoteValue) {
-      throw new Error("No quote returned");
-    }
-
-    quoteResult.textContent = `Estimated instant quote: $${quoteValue}`;
-  } catch (_error) {
-    const fallback = estimateFallback(payload.material, payload.quantity, payload.hours);
-    quoteResult.textContent = `Live integration is not configured yet. Fallback estimate: $${fallback}. Connect your Make/Zapier webhook in quote.js.`;
-  }
+  quoteResult.innerHTML = `Estimated quote: $${estimate}. Opening your email app to send this request to ${QUOTE_NOTIFICATION_EMAIL}... If it does not open, <a href="${mailtoLink}">click here</a>.`;
+  window.location.href = mailtoLink;
 });
 
 const navQuote = document.getElementById("nav-quote");
